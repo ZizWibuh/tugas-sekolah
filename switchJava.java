@@ -5,11 +5,13 @@ public class switchJava {
         
         Scanner input = new Scanner(System.in);
         
+        char ulang;
+    do {
         System.out.println("Masukkan nilai");
         double C = input.nextDouble();
 
         System.out.println("Pilihan R/F/K");
-        char operator = input.next().charAt(0);
+        char operator = input.next().toUpperCase().charAt(0);
 
         double R = C * 4/5;
         double F = (C * 9/5) + 32;
@@ -17,16 +19,23 @@ public class switchJava {
 
         switch (operator) {
             case 'R' :
-            System.out.println("Hasil: " + R);
+            System.out.println("Hasil konversi C ke R: " + R);
             break;
             case 'F' :
-            System.out.println("Hasil: " + F);
+            System.out.println("Hasil konversi C ke F: " + F);
             break;
             case 'K' :
-            System.out.println("Hasil: " + K);
+            System.out.println("Hasil konversi C ke K: " + K);
             break;
             default : 
             System.out.println("Tidak valid");
         }
+        
+        System.out.println("Ingin mengulang? Y/N");
+        ulang = input.next().toUpperCase().charAt(0);
+    } while ( ulang == 'Y');
+
+        input.close();
+        }
     }
-}
+

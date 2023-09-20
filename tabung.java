@@ -3,19 +3,42 @@ import java.util.Scanner;
 public class tabung {
     public static void main(String[] args) {
         
-        Scanner tabung = new Scanner(System.in);
+        char ulang;
+        do {
+        Scanner input = new Scanner(System.in);
 
-        System.out.println("Input jari-jari: ");
-        double jari = tabung.nextDouble();
+        System.out.println("====Tabung==== \n1. Luas permukaan \n2. Volume");
+        String pilihan = input.nextLine();
 
-        System.out.println("Input tinggi: ");
-        double tinggi = tabung.nextDouble();
+        while (! pilihan.equalsIgnoreCase("Luas permukaan") && ! pilihan.equalsIgnoreCase("Volume")) {
+            System.out.println("Pilihan tidak valid, Pilih Luas permukaan / Volume");
+            pilihan = input.nextLine();
+        }
 
+         if (pilihan.equalsIgnoreCase("Luas permukaan")) {
+        }
+        else if (pilihan.equalsIgnoreCase("Volume")) {
+        }
+
+        double rumus = 0;
         double phi = 3.14;
 
-        double rumusTabung = phi*(jari*jari)*tinggi;
-        System.out.println("Hasil: "+ rumusTabung);
+        System.out.println("Masukkan jari-jari: ");
+        double r = input.nextDouble();
+        System.out.println("Masukkan tinggi: ");
+        double t = input.nextDouble();
 
-        tabung.close();
+        if (pilihan.equalsIgnoreCase("Luas permukaan")) {
+            rumus = phi * r * (r + t);
+        }
+        else if (pilihan.equalsIgnoreCase("Volume")) {
+            rumus = phi * (r * r) * t;
+        }
+
+        System.out.println("Jari-jari: " + r +"\nTinggi: " + t +"\nHasil: " + rumus);
+
+        System.out.println("Ingin mengulang?");
+        ulang = input.next().toUpperCase().charAt(0);
+    } while (ulang == 'Y');
     }
 }

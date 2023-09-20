@@ -16,6 +16,13 @@ public class bmi2 {
         double rumusBmi = berat/(tinggi*tinggi);
         System.out.println("BMI: "+ rumusBmi);
 
+        if (rumusBmi < 18.5) {
+            System.out.println("Berat badan kurang!");}
+        else if (rumusBmi > 18.5 && rumusBmi < 24.9) {
+            System.out.println("Berat badan kurang!");}
+        else if (rumusBmi < 29) {
+            System.out.println("Berat badan kurang!");}
+        
         dataBmi.close();
     }
 }

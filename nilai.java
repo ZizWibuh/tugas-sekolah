@@ -11,8 +11,8 @@ public class nilai {
         System.out.println("Silahkan masukkan nilai: ");
         int nilai = input.nextInt();
         
-        String predikat = null;
-        String kategori = null;
+        String predikat;
+        String kategori;
         if (nilai > 95 && nilai <= 100) {
             predikat ="A+";
             kategori ="Sangat Baik";
@@ -49,10 +49,12 @@ public class nilai {
             predikat ="D";
             kategori ="Kurang";
         }
-        
+
         System.out.println("Nama: " + nama);
         System.out.println("Nilai: " + nilai);
         System.out.println("Predikat: " + predikat);
         System.out.println("Kategori: " + kategori);
+
+        input.close();
     }
 }
